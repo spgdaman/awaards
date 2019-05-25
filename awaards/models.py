@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 
 class Project(models.Model):
     image = models.ImageField(upload_to='media/')
+    name = models.CharField(max_length=60)
     description = models.CharField(max_length=200)
     design_rating = models.IntegerField()
-    usablity_rating = models.IntegerField()
+    usability_rating = models.IntegerField()
     content_rating = models.IntegerField()
 
 class Profile(models.Model):
