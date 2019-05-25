@@ -21,9 +21,10 @@
 
         <!-- Search bar section goes here -->
 
-        <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form action="{% url 'search' %}" method="post" role="search" class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Projects" aria-label="Search" name="projects">
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
         </form>
 
         <!-- End of search bar -->
@@ -31,9 +32,9 @@
         <!-- Dropdown section goes here -->
 
         <div class="nav-item dropdown mx-0 px-4">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
-            </a>
+            </a> -->
             <div class="dropdown-menu mx-0" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>

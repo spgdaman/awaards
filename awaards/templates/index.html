@@ -6,15 +6,17 @@
        
     {% for project in projects %}
     <div class="row">
-        <div class="card col-sm-12 col-md-6 mx-auto">
-            <div class="card-header">
-                <img src="{{project.image.url}}" alt="{{project.name}}" class="w-100 px-0 py-0 mx-0 my-0">
+        <div class="card col-sm-12 col-md-6 mx-auto px-0 py-0">
+            <div class="card-header px-0 py-0">
+                <img src="{{project.image.url}}" alt="{{project.name}}" class="w-100">
             </div>
             <div class="card-body">
-                <p>{{project.description}}</p>
+                <div class='row'>
+                    <p>{{project.description}}</p>
+                </div>
                 <div class="row">
                     <p>Design {{project.design_rating}} | </p>
-                    <div>Usability {{project.usablity_rating}} |</div>
+                    <p>Usability {{project.usability_rating}} |</p>
                     <p>Content {{project.content_rating}}</p>
                 </div>
             </div>
