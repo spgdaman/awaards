@@ -1,9 +1,19 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Hello World</title>
+        {% block styles %}
+            {% bootstrap_css %}
+        {% endblock%}
     </head>
     <body>
-        <h1>Hey there I work</h1>
+        {% block scripts %}
+            {% bootstrap_javascript %}
+        {% endblock %}
+        
+        {% block content %}
+
+        {% endblock %}
     </body>
 </html>
