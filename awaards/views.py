@@ -2,6 +2,7 @@ from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from .models import Profile,Project
 from django.contrib.auth.decorators import login_required
+from .forms import NewProject,UpdateProfile
 
 @login_required(login_url='/accounts/login/')
 def index(request):
@@ -19,6 +20,7 @@ def search_results(request):
         message="Please enter a correct search term"
         return render(request,"search.html")
 
+@login_required(login_url='/accounts/login/')
 def profile(request,profile_id):
     profile = Profile.objects.filter(id=profile_id)
     user_projects = Project.objects.filter(profile=profile_id)
@@ -28,3 +30,17 @@ def profile(request,profile_id):
 def project(request,project_id):
     project = Project.objects.filter(id=project_id)
     return render(request,'project.html',{"projects":project})
+
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewProject(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.user = current_user
+            project.save()
+        return redirect('home')
+    else:
+        form = NewProject()
+    return render(request,'newproject.html', {"form":form})
