@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^profile/(\d+)', views.profile, name="profile"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', viewauth.logout, {"next_page": '/index'}),
+    url(r'^project/project_id/(\d+)', views.project, name="project"),
 ]
 
 if settings.DEBUG:
