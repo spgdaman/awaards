@@ -4,7 +4,7 @@
     
     <div class="row">
         {% if projects %}
-            <h1 class="mx-auto">Found {{message|length} projects}</h1>
+            <h1 class="mx-auto">Found {{projects | length}} projects</h1>
         {% else %}
             <h1>Found 0 items for the search term {{message}}</h1>
         {% endif %}

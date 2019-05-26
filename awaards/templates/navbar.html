@@ -1,6 +1,6 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <a class="navbar-brand" href="#">Awaards</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Awaards</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">New Post</a>
@@ -21,8 +21,8 @@
 
         <!-- Search bar section goes here -->
 
-        <form action="{% url 'search' %}" method="post" role="search" class="form-inline my-2 my-lg-0">
-            {% csrf_token %}
+        <form action="{% url 'search' %}" role="search" class="form-inline my-2 my-lg-0">
+
             <input class="form-control mr-sm-2" type="search" placeholder="Search Projects" aria-label="Search" name="projects">
             <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
         </form>

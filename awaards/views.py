@@ -13,7 +13,7 @@ def index(request):
 @csrf_protect
 def search_results(request):
     c={}
-    if 'projects' in request.GET and request.GET['[projects]']:
+    if 'projects' in request.GET and request.GET['projects']:
         search_term = request.GET.get('projects')
         search_item = Project.objects.filter(name__icontains=search_term)
         message=f"{{search_term}}"
