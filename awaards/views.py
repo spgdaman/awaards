@@ -27,6 +27,20 @@ def profile(request,profile_id):
     return render(request, 'profile.html', {"profiles":profile,"projects":user_projects})
 
 @login_required(login_url='/accounts/login/')
+def update_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = UpdateProfile(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = current_user
+            profile.save()
+        return redirect('home')
+    else:
+        form = UpdateProfile()
+    return render(request,'updateprofile.html', {"form":form})
+
+@login_required(login_url='/accounts/login/')
 def project(request,project_id):
     project = Project.objects.filter(id=project_id)
     return render(request,'project.html',{"projects":project})
