@@ -18,3 +18,7 @@ def search_results(request):
     else:
         message="Please enter a correct search term"
         return render(request,"search.html",c)
+
+def profile(request,profile_id):
+    profile = Profile.objects.filter(id=profile_id)
+    return render(request, 'profile.html', {"profiles":profile})

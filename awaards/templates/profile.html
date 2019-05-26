@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    {% for profile in profiles %}
+        <div class="row">
+            <div class="card mx-auto">
+                <div class="card-header">
+                    <img class="px-0 mx-auto" src="{{profile.profile_pic.url}}" alt="{{user.username}}" style="border-radius: 50%; height:150px; width:150px;">
+                </div>
+
+                <div class="body px-1 py-1 my-0">
+                    <p>{{profile.bio}}</p>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="body px-1">
+                    <h5>Contact Information</h5>
+                    <p><i>{{profile.contact_info}}</i></p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
