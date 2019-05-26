@@ -18,13 +18,15 @@ from django.contrib import admin
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as viewauth
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name="hello"),
+    url(r'^index/', views.index, name="home"),
     url(r'^search/', views.search_results, name="search"),
     url(r'^profile/(\d+)', views.profile, name="profile"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^logout/$', viewauth.logout, {"next_page": '/index'}),
 ]
 
 if settings.DEBUG:

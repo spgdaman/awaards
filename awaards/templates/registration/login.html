@@ -1,0 +1,26 @@
+{% extends 'registration/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div class="card mx-auto my-5">
+
+            <div class="card-header">
+                <h3>Log In</h3>
+            </div>
+            <div class="card-body">
+                <form action="/accounts/login/" method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <input type="submit" class="btn btn-primary btn-sm" value="Log In">
+
+                    <input type="hidden" name="next" value="{{next}}">
+                </form>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+{% endblock %}
