@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
+
+    <!-- Profile section goes here -->
     {% for profile in profiles %}
         <div class="row">
-            <div class="card mx-auto">
-                <div class="card-header">
-                    <img class="px-0 mx-auto" src="{{profile.profile_pic.url}}" alt="{{user.username}}" style="border-radius: 50%; height:150px; width:150px;">
+            <div class="card mx-auto col-sm-12 col-md-4">
+                <div class="card-header mx-auto">
+                    <img class="px-0" src="{{profile.profile_pic.url}}" alt="{{user.username}}" style="border-radius: 50%; height:150px; width:150px;">
                 </div>
 
                 <div class="body px-1 py-1 my-0">
@@ -19,5 +21,27 @@
             </div>
         </div>
     {% endfor %}
+    <!-- Profile section ends here -->
+
+    <div class="row">
+        {% for project in projects %}
+            <div class="card col-sm-12 col-md-3 px-0 py-0">
+                <div class="card-header px-0 py-0">
+                    <img src="{{project.image.url}}" alt="{{project.name}}" class="w-100">
+                </div>
+                <div class="card-body">
+                    <div class='row'>
+                        <p>{{project.description}}</p>
+                    </div>
+                    <div class="row">
+                        <p>Design {{project.design_rating}} | </p>
+                        <p>Usability {{project.usability_rating}} |</p>
+                        <p>Content {{project.content_rating}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
 </div>
 {% endblock %}

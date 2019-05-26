@@ -21,7 +21,8 @@ def search_results(request):
 
 def profile(request,profile_id):
     profile = Profile.objects.filter(id=profile_id)
-    return render(request, 'profile.html', {"profiles":profile})
+    user_projects = Project.objects.filter(profile=profile_id)
+    return render(request, 'profile.html', {"profiles":profile,"projects":user_projects})
 
 @login_required(login_url='/accounts/login/')
 def project(request,project_id):
