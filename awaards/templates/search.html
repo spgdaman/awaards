@@ -12,7 +12,7 @@
 
     {% for project in projects %}
         <div class="row">
-            <h5>{{project.name}}</h5>
+            <h5 class="mx-auto"><a href="{% url 'project' project.id %}">{{project.name}}</a></h5>
         </div>
     {% endfor %}
 </div>

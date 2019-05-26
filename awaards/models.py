@@ -9,6 +9,8 @@ class Project(models.Model):
     usability_rating = models.IntegerField()
     content_rating = models.IntegerField()
 
+    profile = models.ForeignKey('Profile')
+
 class Profile(models.Model):
     profile_pic = models.ImageField(upload_to='media/')
     bio = models.CharField(max_length=120)
