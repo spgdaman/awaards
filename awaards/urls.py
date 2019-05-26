@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', views.index, name="hello"),
     url(r'^search/', views.search_results, name="search"),
     url(r'^profile/(\d+)', views.profile, name="profile"),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ]
 
 if settings.DEBUG:
