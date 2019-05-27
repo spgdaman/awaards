@@ -7,14 +7,15 @@ An attempt to clone the popular Awaards application.
 Clone or download the project using the [link](https://github.com/spgdaman/awaards) .
 
 ### Dependencies
-confusable-homoglyphs==3.2.0
-Django==1.11
-django-bootstrap4==0.0.8
-django-registration==2.4.1
-django-tinymce==2.8.0
-Pillow==6.0.0
-psycopg2==2.8.2
-pytz==2019.1
+* confusable-homoglyphs==3.2.0
+* Django==1.11
+* django-bootstrap4==0.0.8
+* django-registration==2.4.1
+* django-tinymce==2.8.0
+* djangorestframework==3.9.4
+* Pillow==6.0.0
+* psycopg2==2.8.2
+* pytz==2019.1
 
 ### Installing
 
