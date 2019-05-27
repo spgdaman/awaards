@@ -1,10 +1,10 @@
-# Instaclone
+# Awaards
 
-An attempt to clone the popular Instagram application
+An attempt to clone the popular Awaards application.
 
 ## Getting Started
 
-Clone or download the project using the [link](https://github.com/spgdaman/instaclone) .
+Clone or download the project using the [link](https://github.com/spgdaman/awaards) .
 
 ### Dependencies
 confusable-homoglyphs==3.2.0
