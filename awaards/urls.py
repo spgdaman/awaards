@@ -29,7 +29,8 @@ urlpatterns = [
     url(r'^logout/$', viewauth.logout, {"next_page": '/index'}),
     url(r'^project/project_id/(\d+)', views.project, name="project"),
     url(r'^new/project/$', views.new_project, name="new_project"),
-    url(r'^update/profile/$', views.update_profile, name="update_profile")
+    url(r'^update/profile/$', views.update_profile, name="update_profile"),
+    url(r'^api/profileinfo/$', views.ProfileDetails.as_view()),
 ]
 
 if settings.DEBUG:

@@ -3,6 +3,10 @@ from django.shortcuts import render, redirect
 from .models import Profile,Project
 from django.contrib.auth.decorators import login_required
 from .forms import NewProject,UpdateProfile
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import Profile,Project
+from .serializers import ProfileSerializer,ProjectSerializer 
 
 @login_required(login_url='/accounts/login/')
 def index(request):
@@ -58,3 +62,9 @@ def new_project(request):
     else:
         form = NewProject()
     return render(request,'newproject.html', {"form":form})
+
+class ProfileDetails(APIView):
+    def get(self, request, format=None):
+        all_profiles=Profile.objects.all()
+        serializers = ProfileSerializer(all_profiles, many=True)
+        return Response(serializers.data)
