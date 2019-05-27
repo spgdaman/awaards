@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^new/project/$', views.new_project, name="new_project"),
     url(r'^update/profile/$', views.update_profile, name="update_profile"),
     url(r'^api/profileinfo/$', views.ProfileDetails.as_view()),
+    url(r'^api/projectinfo/$', views.ProjectDetails.as_view()),
 ]
 
 if settings.DEBUG:
