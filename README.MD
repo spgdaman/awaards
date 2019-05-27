@@ -4,7 +4,7 @@ An attempt to clone the popular Awaards application.
 
 ## Getting Started
 
-Clone or download the project using the [link](https://github.com/spgdaman/awaards) .
+Clone or download the project using the [link](https://github.com/spgdaman/awaards.git) .
 
 ### Dependencies
 * confusable-homoglyphs==3.2.0
